@@ -2,11 +2,13 @@ class Deck
     attr_reader :cards
     def initialize
         @cards = []
-        for suit in ["Hearts", "Clubs", "Diamonds", "Spades"] do
-            for rank in ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"] do
-              @cards << Card.new(suit, rank)
-            end
-        end
+        suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
+        ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+        suits.each{|suit|
+        ranks.each{|rank|
+        @cards << Card.new(suit,rank)
+    }
+    }
     end
 
     def choose_card
